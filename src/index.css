@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: 'Outfit-SemiBold';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--mainbg);
+  font-style: normal;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:root {
+  --mainbg: #0d192c;
+  --cardbg: #15263f;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
