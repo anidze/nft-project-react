@@ -4,6 +4,7 @@ import svg2 from "./images/icon-clock.svg";
 import img2 from "./images/image-avatar.png";
 import img3 from "./images/icon-view.svg";
 import GoogleFontLoader from './fonts/Outfit-SemiBold.ttf';
+import React, { useState } from 'react';
 
 
 <GoogleFontLoader
@@ -14,18 +15,39 @@ import GoogleFontLoader from './fonts/Outfit-SemiBold.ttf';
     ]}
 />
 function ChildComponent(props) {
-  //   console.log(props);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleHover = () => {
+    setIsHovering(!isHovering);
+  };
+
+  const hoverStyle = {
+    hover: {
+      width: "302px",
+      height: "302px",
+      borderRadius: "8px",
+      margin: "24px",
+      background: "#00FFF8",
+      zIndex: 10,
+      position: "absolute",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      opacity: 0.5,
+      visibility: isHovering ? "visible" : "hidden",
+      
+    },
+  };
+
   return (
     <div style={styles.container}>
-      <img src={img} style={imgStyle.img} />
-      <div style={hoverStyle.hover}
-   
-      >
+      <img src={img} style={imgStyle.img} onClick={handleHover} />
+      <div style={hoverStyle.hover}>
         <img src={img3} style={wievStyle.wiew} />
       </div>
 
       <div style={divStyle.div}>
-        <h3 style={headingStyle.heading}>Equilibrium #3429</h3>
+        <h3 style={headingStyle.heading} onClick={handleHover}>Equilibrium #3429</h3>
         <p style={pStyle.parag}>
           Our Equilibrium collection promotes balance and calm.
         </p>
@@ -48,13 +70,12 @@ function ChildComponent(props) {
         <div
           style={{
             display: "flex",
-            // flexDirection: "row",
             alignItems: "center",
             gap: "15px",
           }}
         >
           <img src={img2} style={profileImg.prof} />
-          <p style={heading3.head3}>
+          <p style={heading3.head3} onClick={handleHover} >
             <span style={span.span1}>Creation of</span> Jules Wyvern
           </p>
         </div>
@@ -92,7 +113,6 @@ const divStyle = {
 
 const headingStyle = {
   heading: {
-    // fontFamily: "Outfit",
     fontStyle: "normal",
     fontWeight: 600,
     fontSize: "22px",
@@ -138,9 +158,6 @@ const etP2 = {
     fontSize: "16px",
     lineHeight: "20px",
     alignItems: "end",
-
-    /* Soft Blue */
-
     color: "#8BACD9",
   },
 };
@@ -171,21 +188,21 @@ const span = {
     color: "#8BACD9",
   },
 };
-const hoverStyle = {
-  hover: {
-    width: "302px",
-    height: "302px",
-    borderRadius: "8px",
-    margin: "24px",
-    background: "#00FFF8",
-    zIndex: 10,
-    position: "absolute",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    visibility: "hidden"
-  },
-};
+// const hoverStyle = {
+//   hover: {
+//     width: "302px",
+//     height: "302px",
+//     borderRadius: "8px",
+//     margin: "24px",
+//     background: "#00FFF8",
+//     zIndex: 10,
+//     position: "absolute",
+//     display: "flex",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     visibility: "hidden"
+//   },
+// };
 const wievStyle = {
   wiew: {
     width: "44px",
