@@ -3,18 +3,10 @@ import svg from "./images/icon-ethereum.svg";
 import svg2 from "./images/icon-clock.svg";
 import img2 from "./images/image-avatar.png";
 import img3 from "./images/icon-view.svg";
-import GoogleFontLoader from './fonts/Outfit-SemiBold.ttf';
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 
-<GoogleFontLoader
-    fonts={[
-        {
-            font: 'Outfit-SemiBold'
-        },
-    ]}
-/>
-function ChildComponent(props) {
+function ChildComponent() {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleHover = () => {
@@ -35,49 +27,59 @@ function ChildComponent(props) {
       justifyContent: "center",
       opacity: 0.5,
       visibility: isHovering ? "visible" : "hidden",
-      
     },
   };
 
   return (
-    <div style={styles.container}>
-      <img src={img} style={imgStyle.img} onClick={handleHover} />
-      <div style={hoverStyle.hover}>
-        <img src={img3} style={wievStyle.wiew} />
-      </div>
-
-      <div style={divStyle.div}>
-        <h3 style={headingStyle.heading} onClick={handleHover}>Equilibrium #3429</h3>
-        <p style={pStyle.parag}>
-          Our Equilibrium collection promotes balance and calm.
-        </p>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "inline",
-            justifyContent: "space-between",
-          }}
+    <div style={styles2.container1}>
+      <div style={styles.container}>
+        <img src={img} style={imgStyle.img} />
+        <div 
+        // style={hoverStyle.hover}
         >
-          <p style={etP.etPara}>
-            <img src={svg} style={iconStyle.svg} />
-            0.041 ETH
-          </p>
-          <p style={etP2.etPara2}>
-            <img src={svg2} style={iconStyle2.svg2} />3 days left
-          </p>
+          {/* <img src={img3} style={wievStyle.wiew} /> */}
         </div>
-        <hr style={{ background: "#2E405A" }}></hr>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "15px",
-          }}
-        >
-          <img src={img2} style={profileImg.prof} />
-          <p style={heading3.head3} onClick={handleHover} >
-            <span style={span.span1}>Creation of</span> Jules Wyvern
+
+        <div style={divStyle.div}>
+          <h3 style={headingStyle.heading} 
+          
+          
+          
+          >
+
+            Equilibrium #3429
+          </h3>
+          <p style={pStyle.parag}>
+            Our Equilibrium collection promotes balance and calm.
           </p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "inline",
+              justifyContent: "space-between",
+            }}
+          >
+            <p style={etP.etPara}>
+              <img src={svg} style={iconStyle.svg} />
+              0.041 ETH
+            </p>
+            <p style={etP2.etPara2}>
+              <img src={svg2} style={iconStyle2.svg2} />3 days left
+            </p>
+          </div>
+          <hr style={{ background: "#2E405A" }}></hr>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "15px",
+            }}
+          >
+            <img src={img2} style={profileImg.prof} />
+            <p style={heading3.head3}>
+              <span style={span.span1}>Creation of</span> Jules Wyvern
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -113,6 +115,7 @@ const divStyle = {
 
 const headingStyle = {
   heading: {
+    // fontFamily: "Outfit-SemiBold",
     fontStyle: "normal",
     fontWeight: 600,
     fontSize: "22px",
@@ -207,5 +210,10 @@ const wievStyle = {
   wiew: {
     width: "44px",
     height: "30px",
+  },
+};
+const styles2 = {
+  container1: {
+    margin: "621px ,24px",
   },
 };

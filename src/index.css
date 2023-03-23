@@ -1,15 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
 body {
   margin: 0;
-  font-family: 'Outfit-SemiBold';
+  font-family: "Outfit", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--mainbg);
   font-style: normal;
-  height: 900px;
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* * {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+} */
 :root {
   --mainbg: #0d192c;
   --cardbg: #15263f;
@@ -19,3 +25,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* @media screen and (max-width: 327px) {
+  .container {
+    width: 327px;
+    height: 543px;
+  }
+} */
